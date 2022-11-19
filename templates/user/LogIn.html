@@ -1,12 +1,14 @@
-{%  load static %}
+{% load static %}
 <!doctype HTML>
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
 	<title>LogIn</title>
-	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<link rel="stylesheet" href={% static "css/login.css"%}>
 	<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
 	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+    <!-- jquery -->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 <body>
 	<div class="main-container">
@@ -19,19 +21,20 @@
 				</select>
 			</div>
 			<div class="logo-wrap">
-				<img src="{%static 'image/logo.png'%}">
+				<img src={% static "image/logo.png"%}>
 			</div>
 		</header>
 		<section class="login-input-section-wrap">
 			<div class="login-input-wrap">	
-				<input placeholder="아이디" type="text"></input>
+				<input id="input_login" placeholder="아이디" type="text"></input>
 			</div>
 			<div class="login-input-wrap password-wrap">	
-				<input placeholder="비밀번호" type="password"></input>
+				<input id="input_password" placeholder="비밀번호" type="password"></input>
 			</div>
 			<div class="login-button-wrap">
 				<!-- <button type="button" class="navyBtn" onclick="location.href='">로그인</button> -->
-				<button onclick="location.href='http://127.0.0.1:5501/index.html'">로그인</button >
+				<!-- <button onclick="location.href='www.naver.com'">로그인</button > -->
+					<button id="login_button">로그인</button>
 			</div>
 			<div class="form-check">
         <div>
@@ -54,12 +57,11 @@
 			<h2>Easier sign in</h2>
 			<ul class="sign-button-list">
 				<li><button><i class="fas fa-qrcode"></i><span>Easy Login</span></button></li>
-				<li><button><img src="{%static 'image/kakao.png'%}"><span>KaKao Talk</span></button></li>
+				<li><button><img src={% static "image/kakao.png"%}><span>KaKao Talk</span></button></li>
 				<!-- <li><button><i class="fab fa-line"></i><span>line</span></button></li> -->
 			</ul>
-			<div class="forget-msg"><a href="www.naver.com">Forgot your Username or Password?  </a></div>
+			<div class="forget-msg"><a href="signup.html">Forgot your Username or Password?  </a></div>
 		</section>
-		
 		
 		<!-- <footer>
 			<div class="copyright-wrap">
@@ -68,6 +70,41 @@
 		</footer> -->
 		</div>
 	</div>
-	<script src="{%  static 'js/login.js' %}"></script>
+
+    <script>
+    $('#login_button').click(function () {
+
+        let email = $('#input_login').val();
+        let password = $('#input_password').val();
+
+
+        console.log(email, password);
+
+        $.ajax({
+            url: "/user/login",
+            data: {
+                email : email,
+                password : password
+            },
+            method:"POST",
+
+            success: function(data){
+                console.log("성공");
+                alert("로그인 성공!")
+                location.replace("/main/main")
+            },
+            error: function (request, status, error){
+                console.log("에러");
+                alert("입력한 회원정보가 잘못되었습니다")
+            },
+            complete: function (){
+                console.log("완료");
+
+            }
+        });
+    });
+  </script>
+
+	<script src={% static "js/login.js"%}></script>
 </body>
 </html>

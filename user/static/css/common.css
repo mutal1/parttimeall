@@ -25,8 +25,8 @@ header > h1 {
   height: 100%;
   flex-grow: 1;
 }
-.fa-calendar-days {color: #fb2c2c; margin-right: 2%; margin-bottom: 1%; vertical-align: middle;}
-header > h1 > span {color: #a7a7a7; font-size: 24px; font-weight: 400; vertical-align: bottom;}
+.fa-calendar-days {color: #fb2c2c; margin-top: 2%; margin-right: 1%; margin-bottom: 2%; margin-left:2%; vertical-align: middle;}
+header > h1 > span {color: #a7a7a7; font-size: 28px; font-weight: 400; vertical-align: middle;}
 .calendar_title { margin: 0 auto; flex-grow: 1;}
 .calendar_title .prev , .next{
   width: 30px;
@@ -37,8 +37,99 @@ header > h1 > span {color: #a7a7a7; font-size: 24px; font-weight: 400; vertical-
   outline: none;
   color: #5c5c5c;
 }
+.calendar_title .search{
+  height: 50%;
+  background:#ff7c7c;
+  color:#fff;
+  border:none;
+  position:relative;
+  height:50px;
+  width: 220px;
+  font-size:1.4em;
+  padding:0 2em;
+  cursor:pointer;
+  transition:800ms ease all;
+  outline:none;
+  
+}
+
+
+.calendar_title .search:hover{
+  background:#fff;
+  color:#ff7c7c;
+}
+.calendar_title .search:before, .search:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #ff7c7c;
+  transition:400ms ease all;
+}
+.calendar_title .search:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.calendar_title .search:hover:before, .search:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
+
+.calendar_title .logout{
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #ff7c7c;
+  padding: 17px 60px;
+  margin-left: 20px;
+  box-shadow: 0 5px 15px rgba(243, 226, 226, 0.2);
+}
+
+.calendar_title .logout span{
+  position: relative; 
+  z-index: 1;
+}
+
+.calendar_title .logout:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #ffffff;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.calendar_title .logout:hover{
+  background:#ff7c7c;
+  color:#ff7c7c;
+}
+
+.calendar_title .logout:hover::after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+
 .calendar_title .current-year-month {
-  font-size: 24px;
+  font-size: 30px;
   vertical-align: middle;
   color: #fb2c2c;
   display: inline-block;
@@ -116,7 +207,7 @@ header > h1 > span {color: #a7a7a7; font-size: 24px; font-weight: 400; vertical-
   border-bottom: 1px solid #e4e4e4;
   vertical-align: top;
   padding: 1%;
-  color: rgb(255, 0, 166);
+  color: rgb(0, 0, 0);
   overflow-y: auto;
 }
 #weekly > div.active {

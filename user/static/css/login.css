@@ -78,11 +78,13 @@ body{
 .login-input-wrap{
 	width: 465px;
 	height :48px;
+	margin-bottom: 15px;
 	border: solid 1px var(	--border-gray-color );
 	background: white;
 }
 .password-wrap{
 	margin-top: 13px;
+	margin-bottom: 17px;
 }
 .login-input-wrap input{
 	border: none;

@@ -112,7 +112,7 @@ footer {
     line-height: 1;
     color: #00C040;
     font-weight: 700;
-    position: fixed; }
+    position:absolute; }
     .nav-global .navbar-brand i {
       font-size: 20px; }
   .nav-global .img-brand {
@@ -345,7 +345,9 @@ footer {
   margin: 80px auto 0; }
 
 .container-sign {
-  max-width: 400px; }
+  max-width: 450px;
+
+}
 
 .form-sign {
   margin: 80px 0;
