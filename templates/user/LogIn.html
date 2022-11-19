@@ -1,0 +1,73 @@
+{%  load static %}
+<!doctype HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>LogIn</title>
+	<link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+	<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/sign-in/">
+</head>
+<body>
+	<div class="main-container">
+		<div class="main-wrap">
+		<header>
+			<div class="sel-lang-wrap">
+				<select class="lang-select">
+					<option>한국어</option>
+					<option>English</option>
+				</select>
+			</div>
+			<div class="logo-wrap">
+				<img src="{%static 'image/logo.png'%}">
+			</div>
+		</header>
+		<section class="login-input-section-wrap">
+			<div class="login-input-wrap">	
+				<input placeholder="아이디" type="text"></input>
+			</div>
+			<div class="login-input-wrap password-wrap">	
+				<input placeholder="비밀번호" type="password"></input>
+			</div>
+			<div class="login-button-wrap">
+				<!-- <button type="button" class="navyBtn" onclick="location.href='">로그인</button> -->
+				<button onclick="location.href='http://127.0.0.1:5501/index.html'">로그인</button >
+			</div>
+			<div class="form-check">
+        <div>
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">로그인 상태 유지</label>
+        </div>
+    </div>
+			<div class="login-stay-sign-in">
+				
+				<p>
+				<a href="http://127.0.0.1:5501/signup.html"> 회원가입 </a>
+			  </p>
+				
+				<!-- <i class="far fa-check-circle"></i> -->
+				<!-- <span>Stay Signed in</span> -->
+			</div>
+			
+		</section>
+		<section class="Easy-sgin-in-wrap">
+			<h2>Easier sign in</h2>
+			<ul class="sign-button-list">
+				<li><button><i class="fas fa-qrcode"></i><span>Easy Login</span></button></li>
+				<li><button><img src="{%static 'image/kakao.png'%}"><span>KaKao Talk</span></button></li>
+				<!-- <li><button><i class="fab fa-line"></i><span>line</span></button></li> -->
+			</ul>
+			<div class="forget-msg"><a href="www.naver.com">Forgot your Username or Password?  </a></div>
+		</section>
+		
+		
+		<!-- <footer>
+			<div class="copyright-wrap">
+			<span>	<img src="img/logo.png"> Copyright © NAVER Corp. All Rights Reserved.</span>
+			</div>
+		</footer> -->
+		</div>
+	</div>
+	<script src="{%  static 'js/login.js' %}"></script>
+</body>
+</html>

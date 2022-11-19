@@ -1,0 +1,116 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>회원가입</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/css/bootstrap-slider.min.css" integrity="sha256-G3IAYJYIQvZgPksNQDbjvxd/Ca1SfCDFwu2s2lt0oGo=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <!-- jquery -->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+</head>
+<body>
+  <nav class="navbar nav-global nav-global-sign navbar-expand-sm">
+    <div class="container d-flex justify-content-center">
+        <a class="navbar-brand" href="./LogIn.html">
+            <img class="img-brand" alt="달력이 알바야" width="250" src="{% static 'image/logo.png' %}">
+        </a>
+        <!-- 위에 이미지 파일이라 안바낌 -->
+    </div>
+</nav>
+    <div class="container container-sm container-sign">
+        <form class="form-sign" id="myform" action="./LogIn.html">
+            <h5 class="form-headline">회원가입</h5>
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputId" placeholder="아이디 입력">
+                <span class="validator userId"></span>
+            </div>
+            
+            <div class="form-group">
+              <input type="text" class="form-control" id="inputNickname" placeholder="닉네임 입력"> <!--  -->
+              <span class="validator userNickname"></span>
+          </div> 
+            
+            <div class="form-group">
+                <input type="text" class="form-control" id="inputEmail" placeholder="이메일 입력">
+                <span class="validator userEmail"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="inputPassword" placeholder="비밀번호 입력">
+                <span class="validator userPassword"></span>
+            </div>
+            <div class="form-group">
+                <input type="password" class="form-control" id="confirmPassword" placeholder="비밀번호 확인하기">
+                <span class="validator confirmPw"></span>
+            </div>
+            <button class="btn btn-block btn-primary" data-toggle="modal" data-target=".modal" id="signup">동의하고 시작하기</button>
+            
+            <button id="signup_button" class="btn btn-block btn-light">회원가입</button>
+
+            <h6 class="txt-terms"><a href="#">이용약관</a> 및 <a href="#">개인정보</a>취급방침</h6>
+        </form>
+    </div>
+
+    <div class="modal" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <script>
+      $ = jquery;
+    $('#signup_button').click(function () {
+
+        let id = $('#inputId').val();
+        let password = $('#inputPassword').val();
+        let nickname = $('#inputNickname').val();
+        let email = $('#inputEmail').val();
+
+        console.log(email, password, nickname, name);
+
+        $.ajax({
+            url: "/user/signup",
+            data: {
+                email : email,
+                password : password,
+                nickname : nickname,
+                name : name
+            },
+            method:"POST",
+
+            success: function(data){
+                console.log("성공");
+                alert("회원가입 성공! 로그인 해주세요")
+
+            },
+            error: function (request, status, error){
+                console.log("에러");
+            },
+            complete: function (){
+                console.log("완료");
+
+            }
+        });
+    });
+  </script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/10.6.2/bootstrap-slider.js" integrity="sha256-59/apVFrosMLFX2dHZLGvb3nPpu7e0Yx1rsDr1dTRrk=" crossorigin="anonymous"></script>
+    <script src="{% static 'js/signup.js'%}"></script>
+</body>
+</html>
+
+
