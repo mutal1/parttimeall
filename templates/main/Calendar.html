@@ -10,6 +10,10 @@
   <script src={% static "js/main.js"%}></script>
   <script src={% static "js/data.js"%}></script>
   <title>Calendar</title>
+
+    <!-- jquery -->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
 </head>
 <body>
 <header>
@@ -22,7 +26,7 @@
     <button class="prev">&#60;</button>
     <span class="current-year-month"></span>
     <button class="next">&#62;</button>
-    <button class="logout" style="float:right;"><span>Log Out</span></button>
+      <button id="logout_button" class="logout" style="float:right;"><span><a href="/user/logout">Log Out</a></span></button>
     <button class="search" style="float:right;">Hot Time</button>
   </div>
 </header>
@@ -35,8 +39,8 @@
     <div class="todo-wrap">
       <div class="todo-title">Todo List</div>
       <form class="input-form">
-        <input type="text" placeholder="write here!!" class="input-box" />
-        <button type="submit" class="input-btn clickBtn">INPUT</button>
+        <input type="text" id="todo_input" placeholder="write here!" class="input-box" />
+        <button id="input_button" type="submit" class="input-btn clickBtn">INPUT</button>
       </form>
       <ul class="todoList"></ul>
       <div class="showList">
@@ -60,5 +64,41 @@
     </div>
     <div class="calendar-body"></div>
 </section>
+
+<script>
+$('#input_button').click(function () {
+
+    alert("todolist 등록!");
+    let todo_list = $('#todo_input').val();
+    let day = $('.main-date').text();
+    let month = 11;
+    let year = 2022;
+    day = parseInt(day)
+    console.log(todo_list,day);
+
+    $.ajax({
+        url: "/main/main",
+        data: {
+            todo_list : todo_list,
+            day : day,
+            month : month,
+            year : year,
+        },
+        method: "POST",
+
+        success: function (data) {
+            console.log("성공");
+        },
+        error: function (request, status, error) {
+            console.log("에러");
+        },
+        complete: function () {
+            console.log("완료");
+
+        }
+    });
+});
+</script>
+
 </body>
 </html>

@@ -4,12 +4,7 @@ from django.db import models
 # Create your models here.
 class User(AbstractBaseUser):
     """
-        유저 프로파일 사진
-        유저 닉네임    -> 화면에 표기되는 이름
-        유저 이름 -> 실제사용자 이름
-        유저 이메일주소 ->회원가입할때 사용하는 아이디
-        유저 비밀번호 -> 디폴트로 사용
-
+    일반 유저 모델
     """
 
     nickname = models.CharField(max_length=24, unique=True)
@@ -20,3 +15,17 @@ class User(AbstractBaseUser):
 
     class Meta:
         db_table = "User"
+
+"""class CEO(AbstractBaseUser):
+    
+   
+    
+    ceo_nickname = models.CharField(max_length=24, unique=True)
+    ceo_name = models.CharField(max_length=24)
+    ceo_email = models.EmailField(unique=True)
+
+    USERNAME_FIELD = 'ceo_nickname'
+
+    class Meta:
+        db_table = "CEO_User"""
+
