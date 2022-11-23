@@ -10,3 +10,12 @@ class Todo(models.Model):
     email = models.EmailField() # 사용자 정보
     class Meta:
         db_table = "Todotext"
+
+class Upload(models.Model):
+
+    title_box = models.TextField() # 제목
+    content_box = models.TextField() # 본문
+    email = models.EmailField() # 사용자 정보
+
+    class Meta:
+        db_table = "Upload"

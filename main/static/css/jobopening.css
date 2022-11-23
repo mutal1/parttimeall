@@ -1,0 +1,192 @@
+body {
+  margin: 0;
+  background-color: #f4f2ec;
+  text-underline-position: under;
+}
+
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 0px;
+}
+
+#backIcon {
+  color: #f4f2ec;
+  font-size: smaller;
+}
+
+#content {
+  margin: 20px;
+  flex-direction: column;
+}
+
+.writingContainer {
+  width: 100%;
+  /* padding-left: 25px; */
+  font-size: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+#saveBtn {
+  width: 60px;
+  height: 30px;
+  font-size: 12px;
+  font-weight: bolder;
+  background-color: #be2623;
+  border: none;
+  border-radius: 5px;
+  color: #f4f2ec;
+  margin-top: 15px;
+}
+#titlebox {
+  width: 80%;
+  margin-top: 5px;
+
+  font-size: 15px;
+  /* margin: 0px; */
+  margin-right: 100px;
+  margin-bottom: 20px;
+}
+#contentbox {
+  margin-left: 20px;
+  width: 80%;
+  height: 250px;
+
+  font-size: 15px;
+  /* margin: 0px; */
+  margin-bottom: 20px;
+}
+#postLabel {
+  float: left;
+  font-size: 20px;
+  margin-left: 18px;
+  margin-bottom: 5px;
+}
+label {
+  margin-left: 10px;
+  font-size: 15px;
+}
+#infobox {
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 180px;
+}
+
+input {
+  margin-left: 7px;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+#deadline {
+  width: 20px;
+}
+#increaseRate {
+  width: 40px;
+}
+.inputLabel {
+  margin-left: 1px;
+}
+.GenderinputLabel {
+  margin-left: -6px;
+}
+select {
+  margin-left: 7px;
+}
+#payLabel {
+  margin-left: -3px;
+}
+#rateLabel {
+  margin-left: 2px;
+}
+#payboostbox {
+  width: 280px;
+  margin-top: 10px;
+  padding: 3px;
+  background-color: #e9e6e6;
+}
+/* 사이드바 */
+.nav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #e0dedc;
+  font-size: 30px;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0;
+  text-align: center;
+}
+.slide {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #ff5353;
+  height: 50px;
+  margin-left: -25px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#menuIcon {
+  color: #fff;
+}
+.nav a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+}
+.nav label {
+  font-size: 22px;
+  font-weight: bolder;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav img {
+  width: 42px;
+  height: 42px;
+  margin-right: -7px;
+  vertical-align: middle;
+  padding-top: 5px;
+}
+
+#mypageIcon {
+  width: 35px;
+  height: 35px;
+  margin-right: 0px;
+  padding-top: 0px;
+}
+.nav div {
+  padding: 20px;
+}
+.nav .close {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  margin-right: 50px;
+  font-size: 30px;
+}
+.slide a {
+  font-size: 32px;
+  height: 50px;
+}
+#page {
+  transition: margin-right 0.7s;
+  overflow: hidden;
+  width: 100%;
+}
+
+h1 {
+  margin: 0;
+  color: #ffffff;
+  /* height: 35px; */
+  vertical-align: middle;
+  padding-top: 5px;
+  font-size: 27px;
+}
+/*사이드바 끝*/
