@@ -6,13 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href={% static "css/jobopening.css" %}>
+    <link rel="stylesheet" href={% static "css/jobopening.css"%}>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
-
     <title>구인게시글</title>
-
-     <!-- jquery -->
+    <!-- jquery -->
     <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
 </head>
 
@@ -27,121 +25,65 @@
       <a href="#" onclick="openSlideMenu()">
           <i class="fas fa-bars" id="menuIcon"></i>
       </a>
-    </span>
-</div>
-<div id="menu" class="nav">
-    <a href="#" class="close" onclick="closeSlideMenu()" style="padding: 20px 30px;">
-        <span class="material-icons">close</span>
-    </a>
-    <div>
-        <label class="homeUserName"></label><label>님</label>
-    </div>
-    <div class="sideBarLinkBox">
-        <img id="mypageIcon" src="../Icons/user (2).png">
-        <a href="../myPage/myPage.html">마이페이지</a>
-    </div>
-    <div class="sideBarLinkBox">
-        <img id="offerBoardIcon" src="../Icons/look-for (3).png">
-        <a href="../bulletinBoard/jobOfferBoard.html">구인게시판</a>
-    </div>
-    <div class="sideBarLinkBox">
-        <img id="searchBoardIcon" src="../Icons/search (2).png">
-        <a href="../bulletinBoard/jobSearchBoard.html">구직게시판</a>
-    </div>
-    <div style="padding:13px;"></div>
-    <a id="logoutBtn" style="font-size: 21px;">Logout</a><br>
-    <a href="../userGuidePage/userGuidePage.html"><img src="../Icons/question.png" style="width: 25px; height: 25px; margin-top: 10px;"></a>
-</div>
+  </span>
 
+    <div id="menu" class="nav">
+        <a href="#" class="close" onclick="closeSlideMenu()" style="padding: 20px 30px;">
+            <span class="material-icons">close</span>
+        </a>
+        <div>
+            <label class="homeUserName"></label><label>님</label>
+        </div>
+        <div class="sideBarLinkBox">
+            <img id="mypageIcon" src="../Icons/user (2).png">
+            <a href="../myPage/myPage.html">마이페이지</a>
+        </div>
+        <div class="sideBarLinkBox">
+            <img id="offerBoardIcon" src="../Icons/look-for (3).png">
+            <a href="../bulletinBoard/jobOfferBoard.html">구인게시판</a>
+        </div>
+        <div class="sideBarLinkBox">
+            <img id="searchBoardIcon" src="../Icons/search (2).png">
+            <a href="../bulletinBoard/jobSearchBoard.html">구직게시판</a>
+        </div>
+        <div style="padding:13px;"></div>
+        <a id="logoutBtn" style="font-size: 21px;">Logout</a><br>
+        <a href="../userGuidePage/userGuidePage.html"><img src="../Icons/question.png" style="width: 25px; height: 25px; margin-top: 10px;"></a>
+    </div>
+</div>
 
 
 
 <div id="content">
     <div class="writingContainer">
         <label id=postLabel><b>구인게시글</b></label>
-
         <form method="POST">
             {% csrf_token %}
-        <input id="titlebox" name="titlebox" type="text" placeholder="제목"><br>
-       <textarea name="contentbox" id="contentbox" cols="30" rows="10" placeholder="본문"></textarea><br>
+            <input name="titlebox" id="titlebox" type="text" placeholder="제목"><br>
+            <textarea name="contentbox" id="contentbox" cols="30" rows="10" placeholder="본문"></textarea><br>
+                <label >성별</label>
+                <input type="radio" name="userGender" value="상관없음" checked class=Genderinput> <label class=GenderinputLabel>상관없음</label>
+                <input type="radio" name="userGender" value="남" class=Genderinput> <label class=GenderinputLabel>남</label>
+                <input type="radio" name="userGender" value="여" class=Genderinput> <label class=GenderinputLabel>여</label><br>
 
-            <input type="submit" id="saveBtn" value="Upload"></input><br>
+                <label>근무시작일</label><input type="date" id="workStart" name="workStart"><br>
+                <label>근무마감일</label><input type="date" id="workEnd" name="workEnd"><br>
+                <label>시급</label> <input type="text" id="pay"  name="money"> <label id=payLabel>원</label><br>
+
+                <label>지역</label>
+                <input type="text" id="address_kakao" name="address"> </input>
+                <div style="text-align: center;"> <input type="submit" id="saveBtn" value="Upload"></input><br></div>
         </form>
-
-        <div id="infobox">
-
-            <label>성별</label>
-            <input type="radio" name="userGender" value="상관없음" checked class=Genderinput> <label class=GenderinputLabel>상관없음</label>
-            <input type="radio" name="userGender" value="남" class=Genderinput> <label class=GenderinputLabel>남</label>
-            <input type="radio" name="userGender" value="여" class=Genderinput> <label class=GenderinputLabel>여</label><br>
-
-            <label>근무시작일</label><input type="date" id="workStart"><br>
-            <label>근무마감일</label><input type="date" id="workEnd"><br>
-            <label>게시마감일</label><input type="date" id="postEnd"><br>
-            <label>시급</label> <input type="text" id="pay" value="최저시급"> <label id=payLabel>원</label><br>
-
-            <label>지역</label>
-            <input type="text" id="address_kakao" name="address" readonly />
-
-            <div id="payboostbox">
-                <label>마감전 시급인상</label>
-                <input type="radio" class="payboost" name="payboost" value="false" id="false" checked><label class=inputLabel>미사용</label>
-                <input type="radio" class="payboost" name="payboost" value="true" id="true"><label class=inputLabel>사용</label><br>
-                <label>인상율</label>
-                <input type="text" id="increaseRate" name="increaseRate" disabled><label id=rateLabel>%</label><br>
-                <label>적용일 : 마감 D-</label><input type="text" id="deadline" name="deadline" disabled>
-            </div>
-        </div>
     </div>
 </div>
+</div>
+</body>
 
 <script>
-     $('#saveBtn').click(function () {
-         alert("upload 되었습니다!");
-     });
-/*
-    $('#saveBtn').click(function (){
-        alert("upload 되었습니다!")
-        let title_box = $('#titlebox').val();
-        let content_box = $('#contentbox').val();
-
-        console.log(title_box,content_box);
-
-         $.ajax({
-            url: "/main/upload",
-            data: {
-                title_box : title_box,
-                content_box : content_box
-            },
-            method: "POST",
-
-            success: function (data) {
-                console.log("성공");
-            },
-            error: function (request, status, error) {
-                console.log("에러");
-            },
-            complete: function () {
-                console.log("완료");
-
-            }
-        });
+    $('#saveBtn').click(function () {
+        alert("upload 되었습니다!");
     });
-*/
 </script>
-</body>
-<script src="https://code.jquery.com/jquery-3.6.0.slim.js"
-        integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
-<!-- update the version number as needed -->
-<script src="../__/firebase/8.6.5/firebase-app.js"></script>
-<!-- include only the Firebase features as you need -->
-<script src="../__/firebase/8.6.5/firebase-firestore.js"></script>
-<script src="../__/firebase/8.6.5/firebase-storage.js"></script>
-
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.5.0/firebase-app.js";
-</script>
-<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
-<script src={% static "js/jobopening.js" %}></script>
+<script src={% static "js/jobopening.js"%}></script>
 
 </html>

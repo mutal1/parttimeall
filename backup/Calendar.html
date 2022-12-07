@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://kit.fontawesome.com/ab37566a05.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href={% static "css/common.css"%}>
+  <link rel="stylesheet" href={%  static "css/reset.css"%}>
+  <script src={% static "js/main.js"%}></script>
+  <script src={% static "js/data.js"%}></script>
+  <title>Calendar</title>
+
+     <!-- jquery -->
+    <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+<body>
+<header>
+  <h1>
+    </div>
+    <i class="fa-solid fa-calendar-days"></i>
+    <span>달력이 알바야</span>
+  </h1>
+  <div class="calendar_title">
+    <button class="prev">&#60;</button>
+    <span class="current-year-month"></span>
+    <button class="next">&#62;</button>
+      <button id="logout_button" class="logout" style="float:right;"><span><a href="/user/logout">Log Out</a></span></button>
+    <button class="search" style="float:right;">Hot Time</button>
+  </div>
+</header>
+<section class="content-left">
+  <div class="left-main">
+    <div class="main-wrap">
+      <div class="main-day"></div>
+      <div class="main-date"></div>
+    </div>
+    <div class="todo-wrap">
+      <div class="todo-title">Todo List</div>
+      <form class="input-form">
+        <input type="text" id="todo_input" placeholder="write here!" class="input-box" />
+        <button id="input_button" type="submit" class="input-btn clickBtn">INPUT</button>
+      </form>
+      <ul class="todoList"></ul>
+      <div class="showList">
+        <span class="listText"></span>
+        <span class="createDate"></span>
+        <button class="closed">close</button>
+      </div>
+      <div class="bgblack"></div>
+    </div>
+  </div>
+</section>
+<section class="content-right">
+    <div class="day-of-week">
+      <div class="dayHeader sun">Sun</div>
+      <div class="dayHeader">Mon</div>
+      <div class="dayHeader">Tue</div>
+      <div class="dayHeader">Wed</div>
+      <div class="dayHeader">Thu</div>
+      <div class="dayHeader">Fri</div>
+      <div class="dayHeader sat">Sat</div>
+    </div>
+    <div class="calendar-body"></div>
+</section>
+
+<script>
+$('#input_button').click(function () {
+
+    alert("todolist 등록!");
+    let todo_list = $('#todo_input').val();
+    let day = $('.main-date').text();
+    let month = 11;
+    let year = 2022;
+    day = parseInt(day)
+    console.log(todo_list,day);
+
+    $.ajax({
+        url: "/main/",
+        data: {
+            todo_list : todo_list,
+            day : day,
+            month : month,
+            year : year,
+        },
+        type: "POST",
+
+        success: function (data) {
+            console.log("성공");
+        },
+        error: function (request, status, error) {
+            console.log("에러");
+        },
+        complete: function () {
+            console.log("완료");
+
+        }
+    });
+});
+</script>
+
+</body>
+</html>

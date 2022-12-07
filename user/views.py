@@ -17,11 +17,22 @@ class Signup(APIView):
         nickname = request.data.get('nickname', None)
         password = request.data.get('password', None)
         name = request.data.get('name', None)
+        area = request.data.get('area', None)
+        year = request.data.get('year', None)
+        master = request.data.get('master', None)
+
+        if master == "1":
+            master = True
+        else:
+            master = False
 
         User.objects.create(email=email,
                             nickname=nickname,
                             name=name,
                             password=make_password(password),
+                            area=area,
+                            year=year,
+                            master=master
                             )
 
         return Response(status=200)

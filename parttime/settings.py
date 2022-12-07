@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user', # 사용자 정보
-    'main' # 달력 화면
+    'main', # 달력 화면
 ]
 
 MIDDLEWARE = [
@@ -123,14 +123,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'user', 'static'),
-    os.path.join(BASE_DIR, 'main', 'static')
-]
+    os.path.join(BASE_DIR, 'static')
+  ]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media') #사용자가 업로드한 파일 관리
 
 #커스텀 유저모델
 AUTH_USER_MODEL = "user.User"

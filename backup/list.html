@@ -1,0 +1,435 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>리스트</title>
+    <script src="https://kit.fontawesome.com/fc6db9a58c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href={% static "css/list.css"%}>
+    <!-- <script defer src="js/sale.js"></script>
+    <script defer src="js/sale2.js"></script> -->
+     <!-- jquery -->
+     <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+        <header>
+
+        </header>
+        <main>
+            <section id="visual">
+                <button class="logout" style="float:right;"><span>Log Out</span></button>
+                <div class="in">
+                    <div class="visual_text">
+                        <h2>대타가 필요할땐</h2>
+                        <h1>달력이 알바야</h1>
+                        <p>대타알바 구인구직 포털서비스<br>빠르고 효율적으로 대타하세요!</p>
+                    </div>
+                    <div class="visual_img">
+                        <img src={% static "image/calendar.png"%} alt="리정전소미">
+                    </div>
+                </div>
+            </section>
+            <section id="benefit">
+                <h2 class="hidden">benefit</h2>
+                <ul class="in">
+                    <div class="stypediv">
+                        <h1>Hot Time 알바</h1>
+                    </div>
+
+                    <div class="type01">
+                        <ul>
+                            <li>
+                                <!-- <span class="article-chk"><label for="b-chk01" class="hide"></label><input id="b-chk01" type="checkbox" /></span> -->
+                                <div class="b-box01">
+                                    <div class="b-num-box">6</div>
+                                    <div class="b-img-box"><a href="#a" title=""><img src={% static "list image/cu.png"%} alt="" /></a></div>
+                                </div>
+                                <div class="b-box02">
+                                    <div class="b-title-box">
+                                        <a href="#a"><span class="b-cate">[Hot]</span>CU 강릉원주대점 </a>
+                                        <span class="b-new"><span class="hide">새 글</span></span>
+                                    </div>
+                                    <div class="b-text-box"><a href="#a">앙 개꿀 알바띠</a></div>
+                                    <ul class="b-info-box">
+                                        <li class="b-num">No.6</li>
+                                        <li class="b-writer"><span>작성자</span>이찬규</li>
+                                        <li class="b-date"><span>작성일</span>2020-11-09</li>
+                                        <li class="b-hit"><span>조회수</span>6</li>
+                                    </ul>
+                                    <div class="button-1">
+                                        <div class="eff-1"></div>
+                                        <a href="#"> 지원하기 </a>
+                                      </div>
+
+                                </div>
+                                <div class="b-box03"><a href="#a" title="첨부파일 다운로드"><img src={% static "img/ico-file01.gif"%} alt="첨부파일" /></a></div>
+                            </li>
+                            <li>
+                                <!-- <span class="article-chk"><label for="b-chk02" class="hide"></label><input id="b-chk02" type="checkbox" /></span> -->
+                                <div class="b-box01">
+                                    <div class="b-num-box">5</div>
+                                    <div class="b-img-box"><a href="#a" title=""><img src={% static "list image/당구장.jpg"%} alt="" /></a></div>
+                                </div>
+                                <div class="b-box02">
+                                    <div class="b-title-box">
+                                        <a href="#a"><span class="b-cate">[HOT]</span>당구랑께 택지점</a>
+                                        <span class="b-new"><span class="hide">새 글</span></span>
+                                    </div>
+                                    <div class="b-text-box"><a href="#a">꼰대 많음</a></div>
+                                    <ul class="b-info-box">
+                                        <li class="b-num">No.5</li>
+                                        <li class="b-writer"><span>작성자</span>작성자</li>
+                                        <li class="b-date"><span>작성일</span>2020-02-01</li>
+                                        <li class="b-hit"><span>조회수</span>2043</li>
+                                    </ul>
+                                    <div class="button-1">
+                                        <div class="eff-1"></div>
+                                        <a href="#"> 지원하기 </a>
+                                      </div>
+                                </div>
+                                <div class="b-box03"><a href="#a" title="첨부파일 다운로드"><img src={% static "img/ico-file01.gif"%} alt="첨부파일" /></a></div>
+                            </li>
+                            <li>
+                                <!-- <span class="article-chk"><label for="b-chk03" class="hide"></label><input id="b-chk03" type="checkbox" /></span> -->
+                                <div class="b-box01">
+                                    <div class="b-num-box">4</div>
+                                    <div class="b-img-box"><a href="#a" title=""><img src={% static "list image/메가커피.jpg"%} alt="" /></a></div>
+                                </div>
+                                <div class="b-box02">
+                                    <div class="b-title-box">
+                                        <a href="#a"><span class="b-cate">[HOT]</span>메가커피 시내점</a>
+                                        <span class="b-new"><span class="hide">새 글</span></span>
+                                    </div>
+                                    <div class="b-text-box"><a href="#a">개바쁨 걍 지원해</a></div>
+                                    <ul class="b-info-box">
+                                        <li class="b-num">No.4</li>
+                                        <li class="b-writer"><span>작성자</span>작성자</li>
+                                        <li class="b-date"><span>작성일</span>2020-02-01</li>
+                                        <li class="b-hit"><span>조회수</span>2043</li>
+                                    </ul>
+                                    <div class="button-1">
+                                        <div class="eff-1"></div>
+                                        <a href="#"> 지원하기 </a>
+                                      </div>
+                                </div>
+                                <div class="b-box03"><a href="#a" title="첨부파일 다운로드"><img src={% static "img/ico-file01.gif"%} alt="첨부파일" /></a></div>
+                            </li>
+                            <li>
+                                <!-- <span class="article-chk"><label for="b-chk04" class="hide"></label><input id="b-chk04" type="checkbox" /></span> -->
+                                <div class="b-box01">
+                                    <div class="b-num-box">3</div>
+                                    <div class="b-img-box"><a href="#a" title=""><img src={% static "list image/엽떡.jpg"%} alt="" /></a></div>
+                                </div>
+                                <div class="b-box02">
+                                    <div class="b-title-box">
+                                        <a href="#a"><span class="b-cate">[HOT]</span>엽기 떡볶이 택지점</a>
+                                        <span class="b-new"><span class="hide">새 글</span></span>
+                                    </div>
+                                    <div class="b-text-box"><a href="#a">개꿀임</a></div>
+                                    <ul class="b-info-box">
+                                        <li class="b-num">No.3</li>
+                                        <li class="b-writer"><span>작성자</span>작성자</li>
+                                        <li class="b-date"><span>작성일</span>2020-02-01</li>
+                                        <li class="b-hit"><span>조회수</span>2043</li>
+                                    </ul>
+                                    <div class="button-1">
+                                        <div class="eff-1"></div>
+                                        <a href="#"> 지원하기 </a>
+                                      </div>
+                                </div>
+                                <div class="b-box03"><a href="#a" title="첨부파일 다운로드"><img src={% static "img/ico-file01.gif"%} alt="첨부파일" /></a></div>
+                            </li>
+                            <li>
+                                <!-- <span class="article-chk"><label for="b-chk05" class="hide"></label><input id="b-chk05" type="checkbox" /></span> -->
+                                <div class="b-box01">
+                                    <div class="b-num-box">2</div>
+                                    <div class="b-img-box"><a href="#a" title=""><img src={% static "list image/피시방.jpg"%} alt="" /></a></div>
+                                </div>
+                                <div class="b-box02">
+                                    <div class="b-title-box">
+                                        <a href="#a"><span class="b-cate">[HOT]</span>해피로 택지점</a>
+                                        <span class="b-new"><span class="hide">하루 5끼 제공</span></span>
+                                    </div>
+                                    <div class="b-text-box"><a href="#a">이미지 리스트 내용</a></div>
+                                    <ul class="b-info-box">
+                                        <li class="b-num">No.2</li>
+                                        <li class="b-writer"><span>작성자</span>작성자</li>
+                                        <li class="b-date"><span>작성일</span>2020-02-01</li>
+                                        <li class="b-hit"><span>조회수</span>2043</li>
+                                    </ul>
+                                    <div class="button-1">
+                                        <div class="eff-1"></div>
+                                        <a href="#"> 지원하기 </a>
+                                      </div>
+                                </div>
+                                <div class="b-box03"><a href="#a" title="첨부파일 다운로드"><img src={% static "img/ico-file01.gif"%} alt="첨부파일" /></a></div>
+                            </li>
+                            <li>
+                                <!-- <span class="article-chk"><label for="b-chk06" class="hide"></label><input id="b-chk06" type="checkbox" /></span> -->
+                                <div class="b-box01">
+                                    <div class="b-num-box">1</div>
+                                    <div class="b-img-box"><a href="#a" title=""><img src={% static "list image/한신포차.jpg"%} alt="" /></a></div>
+                                </div>
+                                <div class="b-box02">
+                                    <div class="b-title-box">
+                                        <a href="#a"><span class="b-cate">[HOT]</span>한신포차 택지점</a>
+                                        <span class="b-new"><span class="hide">새 글</span></span>
+                                    </div>
+                                    <div class="b-text-box"><a href="#a">토 치울줄 알아야함 ㅋ</a></div>
+                                    <ul class="b-info-box">
+                                        <li class="b-num">No.1</li>
+                                        <li class="b-writer"><span>작성자</span>작성자</li>
+                                        <li class="b-date"><span>작성일</span>2020-02-01</li>
+                                        <li class="b-hit"><span>조회수</span>2043</li>
+                                    </ul>
+                                    <div class="button-1">
+                                        <div class="eff-1"></div>
+                                        <a href="#"> 지원하기 </a>
+                                      </div>
+                                </div>
+                                <div class="b-box03"><a href="#a" title="첨부파일 다운로드"><img src={% static "img/ico-file01.gif"%} alt="첨부파일" /></a></div>
+                            </li>
+                        </ul>
+                    </div>
+                </ul>
+            </section>
+
+            <section id="event">
+                <h2 class="hidden">event</h2>
+                <div class="type01">
+                    <table summary="번호, 제목, 작성자, 등록일, 조회, 첨부파일로 구성된 공지사항을 보여주는 표">
+                        <caption class="hahaha">알바 목록</caption>
+                        <colgroup>
+                            <col class="b-col01">
+                            <col class="b-col02">
+                            <col class="b-col03">
+                            <col class="b-col04">
+                            <col class="b-col05">
+                            <col class="b-col06">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th scope="col">NO.</th>
+                                <th scope="col">제목</th>
+                                <th scope="col">작성자</th>
+                                <th scope="col">등록일</th>
+                                <th scope="col">시급</th>
+                                <th scope="col" class="b-no-right"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                <td class="b-num-box">1</td>
+                                <td class="b-td-left">
+                                    <div class="b-title-box">
+                                    <p><a href="#" title="자세히 보기">빠리바게트</a></p>
+                                    빵 줜나 만드는거임 ㅋ
+                                    <div class="b-etc-box">
+                                        <p class="b-lock"><span>비밀글</span></p>
+                                        <p class="b-new"><span>NEW</span></p>
+
+                                        </div>
+                                        <div class="b-m-con">
+                                            <span class="b-writer">작성자</span><span class="b-date">2019-12-20</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>작성자</td>
+                                <td>2022-11-24</td>
+                                <td>
+                                    9,500
+                                </td>
+                                <td class="b-no-right">
+                                    <div class="b-file-bos"><span class="hide"></span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="b-num-box">2</td>
+                                <td class="b-td-left">
+                                    <div class="b-title-box">
+                                        <p><a href="#" title="자세히 보기">게시판 테스트</a></p>
+                                        개 벌레같음
+                                        <div class="b-etc-box">
+                                            <!-- <p class="b-new"><span>NEW</span></p> -->
+                                            <p class="b-file b-hwp"><span>한글</span></p>
+                                        </div>
+                                        <div class="b-m-con">
+                                            <span class="b-writer">작성자</span><span class="b-date">2019-12-15</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>작성자</td>
+                                <td>2022-11-24</td>
+                                <td>
+                                    10,500
+                                </td>
+                                <td class="b-no-right">
+
+                                </td>
+                            </tr>
+                                <td class="b-num-box">3</td>
+                                <td class="b-td-left">
+                                    <div class="b-title-box">
+                                        <p><a href="#" title="자세히 보기">답글 테스트</a></p>
+                                        야메떄
+                                        <div class="b-etc-box">
+                                            <p class="b-lock"><span>비밀글</span></p>
+                                            <!-- <p class="b-new"><span>NEW</span></p> -->
+                                            <p class="b-file b-xls"><span>xls</span></p>
+                                        </div>
+                                        <div class="b-m-con">
+                                            <span class="b-writer">작성자</span><span class="b-date">2019-12-20</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>작성자</td>
+                                <td>2022-11-24</td>
+                                <td>
+                                    10,000
+                                </td>
+                                <td class="b-no-right">
+                                    <div class="b-file-boxs"><span class="hide"></span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="b-num-box">4</td>
+                                <td class="b-td-left">
+                                    <div class="b-title-box">
+                                        <a href="#" title="자세히 보기">게시판 테스트</a>
+                                        <div class="b-etc-box">
+                                            <p class="b-file b-pdf"><span>pdf</span></p>
+                                        </div>
+                                        <div class="b-m-con">
+                                            <span class="b-writer">작성자</span><span class="b-date">2019-12-01</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>작성자</td>
+                                <td>2022-11-24</td>
+                                <td>
+                                    10,000
+                                </td>
+                                <td class="b-no-right">
+                                    <div class="b-file-boxs"><span class="hide"></span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="b-num-box">5</td>
+                                <td class="b-td-left">
+                                    <div class="b-title-box">
+                                        <a href="#" title="자세히 보기">게시판 테스트</a>
+                                        <div class="b-etc-box">
+                                            <p class="b-file b-pdf"><span>pdf</span></p>
+                                        </div>
+                                        <div class="b-m-con">
+                                            <span class="b-writer">작성자</span><span class="b-date">2019-12-01</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>작성자</td>
+                                <td>2022-11-24</td>
+                                <td>
+                                    11,000
+                                </td>
+                                <td class="b-no-right">
+                                    <div class="b-file-boxs"><span class="hide"></span></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="b-num-box">6</td>
+                                <td class="b-td-left">
+                                    <div class="b-title-box">
+                                        <a href="#" title="자세히 보기">게시판 테스트</a>
+                                        <div class="b-etc-box">
+                                            <p class="b-file b-pdf"><span>pdf</span></p>
+                                        </div>
+                                        <div class="b-m-con">
+                                            <span class="b-writer">작성자</span><span class="b-date">2019-12-01</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>작성자</td>
+                                <td>2022-11-24</td>
+                                <td>
+                                    10,500
+                                </td>
+                                <td class="b-no-right">
+                                    <div class="b-file-boxs"><span class="hide"></span></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="type02">
+                        <div class="b-paging-wrap">
+                            <ul>
+                                <!-- <li class="first pager">
+                                    <a href="#a" title="첫 페이지로 이동하기"><span class="hide">첫 페이지로 이동하기</span></a></li>
+                                <li class="prev pager">
+                                    <a href="#a" title="이전 페이지로 이동하기"><span class="hide">이전 페이지로 이동하기</span></a></li> -->
+                                <li>
+                                    <a class="active" href="#a">1</a></li>
+                                <li>
+                                    <a href="#a">2</a></li>
+                                <li>
+                                    <a href="#a">3</a></li>
+                                <li>
+                                    <a href="#a">4</a></li>
+                                <li>
+                                    <a href="#a">5</a></li>
+                                <li>
+                                    <a href="#a">6</a></li>
+                                <li>
+                                    <a href="#a">7</a></li>
+                                <li>
+                                    <a href="#a">8</a></li>
+                                <li>
+                                    <a href="#a">9</a></li>
+                                <li>
+                                    <a href="#a">10</a></li>
+                                <!-- <li class="next pager">
+                                    <a href="#a" title="다음 페이지로 이동하기"><span class="hide">다음 페이지로 이동하기</span></a></li>
+                                <li class="last pager">
+                                    <a href="#a" title="마지막 페이지로 이동하기"><span class="hide">마지막 페이지로 이동하기</span></a></li> -->
+                                </ul>
+                            </div>
+                        </div>
+                </div>
+            </section>
+            <section class="event_notice">
+                <h2 class="hidden">event notice</h2>
+                <div class="in">
+                    <p class="bold event_notice-tit">4NEVER</p>
+                    <p>
+                        ·  요기에는<br>·  머 쓸지<br>·  고민중
+                    </p>
+                </div>
+            </section>
+        </main>
+        <footer id="footer">
+            <p>4NEVER!</p>
+        </footer>
+    </div>
+    <script src={% static "https://unpkg.com/swiper/swiper-bundle.min.js"%}></script>
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 30,
+        grabCursor: true,
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        },
+    });
+    </script>
+</body>
+</html>
