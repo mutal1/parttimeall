@@ -18,8 +18,55 @@
 
     <!-- <script defer src="js/sale.js"></script>
     <script defer src="js/sale2.js"></script> -->
-    <!-- jquery -->
+     <!-- jquery -->
     <script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <style>
+        .box{
+            align-items: center;
+            width: 150px;
+            height: 150px;
+            border-radius: 70%;
+            overflow: hidden;
+        }
+
+        .profile{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+
+        }
+
+        .modal_overlay {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(1.5px);
+            -webkit-backdrop-filter: blur(1.5px);
+        }
+
+        .modal_window {
+
+            background: white;
+            backdrop-filter: blur(13.5px);
+            -webkit-backdrop-filter: blur(13.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            width: 800px;
+            height: 600px;
+            position: relative;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
 
 </head>
 
@@ -68,17 +115,18 @@
                                         <a href="#a"><span class="b-cate">[HOT]</span>{{ hots.title_box}}</a>
                                         <span class="b-new"><span class="hide">새 글</span></span>
                                     </div>
-                                    <div class="b-text-box"><a href="#a">{{ hots.content_box }}</a></div>
+{#                                    <div class="b-text-box"><a href="#a">{{ hots.content_box }}</a></div>#}
                                     <ul class="b-info-box">
                                         <li class="b-num">No.1</li>
                                         <li class="b-writer"><span>작성자</span>{{ hots.email }}</li>
                                         <li class="b-date"><span>작성일</span>{{ hots.start }}</li>
                                         <li class="b-hit"><span>조회수</span>시급:{{ hots.start_money }}</li>
                                     </ul>
-                                    <div class="button-1">
-                                        <div class="eff-1"></div>
-                                        <a href="#"> 지원하기 </a>
-                                    </div>
+{#                                    <div class="button-1">#}
+{#                                        <div class="eff-1"></div>#}
+{#                                        <div class="apps" > 지원하기 </div>#}
+{#                                    </div>#}
+                                    <div style="margin-left: 80px; padding-top: 10px; width: 150px; height: 50px; border: 2px solid #ff4f4f; text-align: center;color:deeppink" class="apps">지원하기</div>
                                 </div>
                                 <div class="b-box03"><a href="#a" title="첨부파일 다운로드"><img src={% static "img/ico-file01.gif"%} alt="첨부파일" /></a></div>
                             </li>
@@ -190,17 +238,70 @@
         <p>4NEVER!</p>
     </footer>
 </div>
-<script src={% static "https://unpkg.com/swiper/swiper-bundle.min.js"%}></script>
+ <!-- 첫번째 모달 -->
+    <div id="first_modal" class="modal_overlay" style="float:left;">
+        <div class="modal_window">
+                <br><br><br>   <b>-근무요일</b> : 일, 월 오픈 17:00 ~ 00:00<br>
+
+
+
+<b>-업무상세</b>:매장Operation (홀 서빙,설겆이,마감 청소 등)<br>
+
+            <b>- 자격요건</b><br>
+
+1. 열정이 있고
+2. 의욕과 도전정신이 있는,
+3. 최고의 인재를 뽑습니다.
+            <br>
+            <br>
+            <br>
+            <br><br>
+            <br>
+            <br>
+
+                    <span id="first_modal_close_box" style="border:2px solid #ff4f4f; font-size:15px; margin-top: 20px; width: 80px; height: 40px;" class="material-symbols-outlined">
+                        cancel
+                    </span>
+                    </div>
+                </div>
+            </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+{#<script src="https://unpkg.com/swiper/swiper-bundle.min.js"</script>#}
+{#<script>#}
+{#    var swiper = new Swiper(".mySwiper", {#}
+{#        slidesPerView: 3,#}
+{#        centeredSlides: true,#}
+{#        spaceBetween: 30,#}
+{#        grabCursor: true,#}
+{#        pagination: {#}
+{#            el: ".swiper-pagination",#}
+{#            clickable: true,#}
+{#        },#}
+{#    });#}
+{#</script>#}
 <script>
-    var swiper = new Swiper(".mySwiper", {
-        slidesPerView: 3,
-        centeredSlides: true,
-        spaceBetween: 30,
-        grabCursor: true,
-        pagination: {
-            el: ".swiper-pagination",
-            clickable: true,
-        },
+    $('.apps').click(function (){
+        $('#first_modal').css({
+            display : 'flex'
+        });
+        $(document.body).css({
+            overflow : 'hidden'
+        });
+    });
+
+    $('#first_modal_close_box').click(function(){
+        $('#first_modal').css({
+            display : 'none'
+        });
+        $(document.body).css({
+            overflow: 'auto'
+        });
+
     });
 </script>
 </body>

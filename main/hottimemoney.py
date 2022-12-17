@@ -13,5 +13,5 @@ def Hottime_func():
 
 def Hottime_main():
     sched = BackgroundScheduler()
-    sched.add_job(Hottime_func, 'interval', seconds=3)
+    sched.add_job(Hottime_func, 'interval', seconds=86400)
     sched.start()
